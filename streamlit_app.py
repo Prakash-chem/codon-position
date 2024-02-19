@@ -30,20 +30,21 @@ image = Image.open('dna_logo.jpg')
 
 st.image(image, use_column_width=True)
 
-# To remove footer and menu
-hide_streamlit_style="""
-<style>
-#MainMenu({visibility:hidden}
-footer{visibility:hidden}
-</style>
+# Injecting CSS to hide Streamlit menu and logo
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
 """
 
-st.markdown(body,unsafe_allow_html=True)
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 # Nuclotide codon position finder
-
-This app finds the position of codons and highlights that position
-""", unsafe_allow_html=True)  # Injecting CSS to hide Streamlit menu and logo
+st.write("""
+# Nuclotide Codon Position Finder
+This app finds the position of codons and highlights them.
+""")
 
 # User input for nucleotide sequence
 sequence_input = st.text_input("Enter Nucleotide Sequence:")
