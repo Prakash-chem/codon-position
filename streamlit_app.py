@@ -37,7 +37,7 @@ st.set_page_config(page_title='Nuclotide Codon Position Finder', layout='wide', 
 hide_github_style = """
 <style>
 /* Hide GitHub icon */
-.css-1g4i74g {
+[data-testid="stDecoration"] {
     visibility: hidden !important;
 }
 </style>
