@@ -29,6 +29,14 @@ def highlight_codons(sequence, positions):
 image = Image.open('dna_logo.jpg')
 st.image(image, use_column_width=True)
 
+# Inject CSS to hide Streamlit's GitHub symbol
+st.markdown("""
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+    """, unsafe_allow_html=True)
+
 # Nuclotide codon position finder
 st.title("Nuclotide Codon Position Finder")
 
@@ -47,6 +55,3 @@ if sequence_input and highlight_positions:
     st.markdown(f"The highlighted sequence: {highlighted_result}", unsafe_allow_html=True)
 else:
     st.warning("Please enter a nucleotide sequence and at least one position to highlight.")
-
-# Hide Streamlit's menu and footer
-st.set_page_config(page_title='Nuclotide Codon Position Finder', layout='wide', initial_sidebar_state='expanded', menu=None, footer=None)
