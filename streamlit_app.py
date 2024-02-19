@@ -33,16 +33,13 @@ st.image(image, use_column_width=True)
 # To remove footer and menu
 st.set_page_config(page_title='Nuclotide Codon Position Finder', layout='wide', initial_sidebar_state='expanded', menu=None, footer=None)
 
-# Inject custom CSS to hide the GitHub symbol
-hide_github_style = """
-<style>
-/* Hide GitHub icon */
-[data-testid="stDecoration"] {
-    visibility: hidden !important;
-}
-</style>
+# Inject JavaScript to hide the GitHub symbol
+hide_github_js = """
+<script>
+document.getElementsByClassName("decoration")[0].style.visibility = "hidden";
+</script>
 """
-st.markdown(hide_github_style, unsafe_allow_html=True)
+st.markdown(hide_github_js, unsafe_allow_html=True)
 
 # Nuclotide codon position finder
 st.write("""
