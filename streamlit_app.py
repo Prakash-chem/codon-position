@@ -48,11 +48,5 @@ if sequence_input and highlight_positions:
 else:
     st.warning("Please enter a nucleotide sequence and at least one position to highlight.")
 
-# Inject CSS to hide Streamlit menu and footer
-hide_menu_style = """
-        <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        </style>
-        """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+# Hide Streamlit's menu and footer
+st.set_page_config(page_title='Nuclotide Codon Position Finder', layout='wide', initial_sidebar_state='expanded', menu=None, footer=None)
