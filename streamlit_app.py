@@ -25,6 +25,11 @@ def highlight_codons(sequence, positions):
 
     return highlighted_sequence
 
+# Streamlit app
+image = Image.open('dna_logo.jpg')
+
+st.image(image, use_column_width=True)
+
 # To remove footer and menu
 hide_streamlit_style="""
 <style>
@@ -35,16 +40,6 @@ footer{visibility:hidden}
 
 st.markdown(body,unsafe_allow_html=True)
 
-# Streamlit app
-image = Image.open('dna_logo.jpg')
-
-st.image(image, use_column_width=True)
-
-st.write("""
-<style>
-#MainMenu {visibility: hidden;}
-.streamlit-badge {display: none;}
-</style>
 # Nuclotide codon position finder
 
 This app finds the position of codons and highlights that position
