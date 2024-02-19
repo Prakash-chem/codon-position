@@ -25,6 +25,16 @@ def highlight_codons(sequence, positions):
 
     return highlighted_sequence
 
+# To remove footer and menu
+hide_streamlit_style="""
+<style>
+#MainMenu({visibility:hidden}
+footer{visibility:hidden}
+</style>
+"""
+
+st.markdown(body,unsafe_allow_html=True)
+
 # Streamlit app
 image = Image.open('dna_logo.jpg')
 
