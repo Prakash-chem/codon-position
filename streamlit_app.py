@@ -31,7 +31,18 @@ image = Image.open('dna_logo.jpg')
 st.image(image, use_column_width=True)
 
 # To remove footer and menu
-st.set_page_config(page_title='Nuclotide Codon Position Finder', layout='wide', initial_sidebar_state='expanded', menu=None, footer=None, hide_streamlit_style=True)
+st.set_page_config(page_title='Nuclotide Codon Position Finder', layout='wide', initial_sidebar_state='expanded', menu=None, footer=None)
+
+# Inject custom CSS to hide the GitHub symbol
+hide_github_style = """
+<style>
+/* Hide GitHub icon */
+.css-1g4i74g {
+    visibility: hidden !important;
+}
+</style>
+"""
+st.markdown(hide_github_style, unsafe_allow_html=True)
 
 # Nuclotide codon position finder
 st.write("""
